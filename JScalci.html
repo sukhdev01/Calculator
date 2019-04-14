@@ -1,0 +1,72 @@
+<!DocType html>
+<html>
+<head>
+	<title>JavaScriptCALCI</title>
+	<h1>The Basic Calculator with JavaScript</h1>
+	<script>
+			function dis(val){
+				document.getElementById("result").value+=val
+			}
+			function solve(){
+				let x=document.getElementById("result").value
+				let y=eval(x)
+				document.getElementById("result").value = y
+			}
+			function clr(){
+				document.getElementById("result").value = ''
+			}
+	</script>
+	<!-- to give style of Button and Text(Output) -->
+	<style>
+		input[type="Button"]
+		{
+			background-color: aqua;
+			color: black;
+			border: solid back 2px;
+			width: 100%;
+			font-size: 300%;
+		}
+		input[type="text"]
+		{
+			background-color: burlywood;
+			border: solid back 2px;
+			width: 100%;
+			font-size: 300%;
+		}
+	</style>
+</head>
+<body>
+	<form name="Cal">
+		<table border="5" width="30%" height="40%" >
+			<tr>
+				<td colspan="3"><input type="text" name="result" id="result"disabled></td>
+				<td> <input type="button" name="clear" value="C" onclick="clr()"> </td>
+			</tr>
+			<tr>
+				<td> <input height="20" type="button" name="one" value="1" onclick="dis('1')"> </td>
+				<td> <input type="button" name="two" value="2" onclick="dis('2')"> </td>
+				<td> <input type="button" name="three" value="3" onclick="dis('3')"> </td>
+				<td> <input type="button" class="operator" name="plus" value="+" onclick="dis('+')"> </td>
+			</tr>
+			<tr>
+				<td> <input type="button" name="four" value="4" onclick="dis('4')"> </td>
+				<td> <input type="button" name="five" value="5" onclick="dis('5')"> </td>	<td> <input type="button" name="six" value="6" onclick="dis('6')"> </td>
+				<td> <input type="button" class="operator" name="minus" value="-" onclick="dis('-')"> </td>
+			</tr>
+			<tr>
+				<td> <input type="button" name="seven" value="7" onclick="dis('7')"> </td>
+				<td> <input type="button" name="eight" value="8" onclick="dis('8')"> </td>
+				<td> <input type="button" name="nine" value="9" onclick="dis('9')"> </td>
+				<td> <input type="button" class="operator" name="multiply" value="*" onclick="dis('*')"> </td>
+			</tr>
+			<tr>
+				<td><input type="button" name="decimal" value="." onclick="dis('.')"></td>
+				<td> <input type="button" name="zero" value="0" onclick="dis('0')"> </td>
+				<td> <input type="button" class="operator" name="DoIt" value="=" onclick="solve()"> </td>
+				<td> <input type="button" class="operator" name="divide" value="/" 
+				onclick="dis('/')"> </td>
+			</tr>
+		</table>		
+	</form>		
+</body>
+</html>
